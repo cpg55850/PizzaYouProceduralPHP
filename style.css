@@ -1,0 +1,589 @@
+/* #region GLOBAL */
+
+:root {
+	--primary-color: #9e221b;
+	--secondary-color: #7e1c15;
+	--placeholder-text: #aaa;
+	--navlink-padding: 10px;
+	--navlink-margin: 14px;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	font-size: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+
+::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: var(--placeholder-text);
+	opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: var(--placeholder-text);
+}
+
+::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: var(--placeholder-text);
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.container {
+	max-width: 800px;
+	padding: 15px;
+	margin: auto;
+}
+
+.danger {
+	color: red;
+	font-weight: bold;
+}
+
+/* #endregion */
+
+/* #region GLOBAL FORMS */
+
+/* Style inputs with type="text", select elements and textareas */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+	font-size: 1.3rem;
+	width: 100%; /* Full width */
+	padding: 12px; /* Some padding */
+	border: 1px solid #ccc; /* Gray border */
+	border-radius: 4px; /* Rounded borders */
+	box-sizing: border-box; /* Make sure that padding and width stays in place */
+	margin-top: 6px; /* Add a top margin */
+	margin-bottom: 16px; /* Bottom margin */
+	resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+	transition: 0.2s;
+	font-size: 1.3rem;
+	background-color: var(--primary-color);
+	color: white;
+	padding: 12px 20px;
+	border: 1px solid white;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	transition: 0.2s;
+	background-color: white;
+	color: var(--primary-color);
+	border: 1px solid var(--primary-color);
+}
+
+/* #endregion */
+
+/* #region NAVBAR */
+
+/* #region NAV -- */
+#main-nav {
+	background-color: white;
+	font-weight: 600;
+	display: flex;
+	border-bottom: 1px solid #ddd;
+}
+
+#desktopMenu {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+	list-style-type: none;
+}
+
+#sub-nav {
+	margin-left: auto;
+	display: flex;
+	padding: 0;
+}
+
+#sub-nav li {
+	margin-right: 5px;
+}
+
+#sub-nav a {
+	text-decoration: none;
+	text-transform: uppercase;
+	display: block;
+	padding: var(--navlink-padding) 20px var(--navlink-padding) 20px;
+	color: var(--primary-color);
+	border-bottom: 5px solid white;
+	transition: 0.1s;
+}
+
+#sub-nav a:hover {
+	cursor: pointer;
+	border-bottom: 5px solid var(--primary-color);
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	padding: 12px 16px;
+	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.fa-shopping-cart {
+	font-size: 1.5rem;
+}
+
+#menuBtn {
+	visibility: hidden;
+	font-size: 2rem;
+	list-style-type: none;
+	padding: 10px;
+}
+
+#mobileMenu {
+	background-color: white;
+	display: none;
+	border-bottom: 1px solid #ddd;
+}
+
+#mobileMenu ul {
+	margin: 0px;
+	padding: 15px;
+	background-color: white;
+}
+
+#mobileMenu li {
+	text-align: center;
+	font-size: 16px;
+	list-style-type: none;
+	margin: 0;
+}
+
+#mobileMenu li:hover {
+	background-color: #ccc;
+	cursor: pointer;
+}
+
+#mobileMenu a {
+	display: block;
+	margin: 3px;
+	padding: 3px;
+}
+
+/* #endregion -- */
+
+/* #region LOGO -- */
+
+#logo {
+	display: flex;
+	align-items: center;
+	padding: var(--navlink-padding);
+	margin: var(--navlink-margin);
+}
+
+#logoText {
+	width: 120px;
+	padding-left: 5px;
+	font-size: 24px;
+	text-decoration: none;
+	color: var(--primary-color);
+}
+
+#logo img {
+	height: 28px;
+}
+
+/* #endregion -- */
+
+/* #region SIGN IN BUTTON -- */
+
+#signin {
+	background-color: var(--primary-color);
+	border-radius: 5px;
+}
+
+#signin a:hover {
+	border: 1px solid var(--primary-color);
+	border-radius: 5px;
+	color: var(--primary-color);
+	background-color: white;
+	transition: 0.2s;
+}
+
+#signin a {
+	border: 1px solid white;
+	border-radius: 5px;
+	color: white;
+	transition: 0.2s;
+}
+
+/* #endregion */
+
+/* #endregion */
+
+/* #region SHOWCASE */
+
+#showcase {
+	display: flex;
+	position: relative;
+	height: 90vh;
+	width: 100%;
+}
+
+#fancyLogo {
+	position: relative;
+	top: 40px;
+	left: 40px;
+	height: 250px;
+}
+
+#bgImage {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-image: url("./img/showcase-min.jpg");
+	height: 100vh;
+	width: 100vw;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	z-index: -1;
+}
+
+/* #endregion */
+
+/* #region INDEX */
+
+.card img {
+	width: 100%;
+	height: 500px;
+	transition: transform 0.2s;
+	object-fit: cover;
+}
+
+.card img:hover {
+	transform: scale(1.5);
+}
+
+.card {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
+	background: white;
+	padding: 30px;
+	margin: 0;
+}
+
+.card > div {
+	padding: 2rem;
+	justify-self: center;
+	align-self: center;
+	line-height: 1.6;
+}
+
+/* #endregion */
+
+/* #region FOOTER */
+footer {
+	color: white;
+	background-color: var(--primary-color);
+}
+
+.ft-main {
+	font-size: 15px !important;
+	line-height: 1.5;
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 100px;
+}
+
+.ft-main ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.ft-main ul li a {
+	color: white;
+	text-decoration: none;
+}
+
+.ft-links {
+	display: inline-block;
+	columns: 2;
+	overflow: hidden;
+}
+
+.ft-a {
+	margin-right: 30px;
+	width: 100%;
+	max-width: 295px;
+	min-width: 180px;
+}
+
+.ft-b {
+	margin-right: 30px;
+	padding: 1rem 0rem 0rem 0rem;
+	width: 400px;
+}
+
+.ft-b li {
+	margin-bottom: 30px;
+	margin-right: 30px;
+}
+
+.ft-c {
+	width: 300px;
+}
+
+.ft-b a:hover {
+	cursor: pointer;
+	color: #ccc;
+}
+
+.ft-social {
+	background-color: var(--secondary-color);
+	color: white;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.ft-social a {
+	color: white;
+	text-decoration: none;
+	margin: 1rem;
+	padding: 0 1rem;
+}
+
+.ft-social a > i {
+	font-size: 2rem;
+}
+
+footer form input {
+	color: white !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	border: none !important;
+	border-bottom: 3px solid white !important;
+	border-radius: 0px !important;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 40px;
+	letter-spacing: 0.1em;
+	background-color: initial;
+}
+
+footer a:hover {
+	cursor: pointer;
+	color: #ccc;
+}
+
+footer form input::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #be6862;
+	opacity: 1; /* Firefox */
+}
+
+footer form input:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #be6862;
+}
+
+footer form input::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: #be6862;
+}
+
+/* #endregion */
+
+/* #region ORDER PAGE */
+
+#order-container {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	grid-template-columns: 1fr 1fr;
+}
+
+#order-container h1 {
+	display: block;
+}
+
+#order-container section {
+	padding: 10px;
+}
+
+.order-box {
+	padding-bottom: 10px;
+}
+
+.quantity-field {
+	font-size: 1.3rem;
+	display: inline-block;
+	width: inherit !important; /* Full width */
+	padding: 12px; /* Some padding */
+	border: 1px solid #ccc; /* Gray border */
+	border-radius: 4px; /* Rounded borders */
+	box-sizing: border-box; /* Make sure that padding and width stays in place */
+	margin-top: 6px; /* Add a top margin */
+	margin-bottom: 16px; /* Bottom margin */
+	resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+#foodimg-container {
+	display: flex;
+	height: 200px;
+	width: 200px;
+	overflow: hidden;
+	border-radius: 50%;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	margin: 15px;
+}
+
+.foodimg {
+	height: 100%;
+}
+
+/* #endregion */
+
+/* #region CART PAGE */
+
+.cart-table {
+	padding-bottom: 10px;
+}
+
+#submitorder {
+	display: block;
+	margin-top: 10px;
+}
+
+/* #endregion */
+
+/* #region ERROR STYLING */
+
+#uname-error,
+#email-error,
+#pwd-error,
+#pwd2-error {
+	color: red !important;
+}
+
+/* #endregion */
+
+/* #region MANAGE */
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th,
+td {
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+th {
+	background-color: #4caf50;
+	color: white;
+}
+
+/* #endregion */
+
+/* #region MEDIA QUERIES */
+@media only screen and (max-width: 750px) {
+	#desktopMenu {
+		display: none;
+	}
+
+	#fancyLogo {
+		position: relative;
+		top: 0px;
+		left: 0px;
+		height: 250px;
+	}
+
+	#showcase {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.ft-main {
+		line-height: 1.5;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 56px 100px;
+	}
+
+	.chart-grid {
+		grid-template-columns: 1fr;
+	}
+
+	#menuBtn {
+		visibility: visible;
+	}
+
+	.card {
+		grid-template-columns: 1fr;
+		grid-gap: 0rem;
+	}
+
+	.card img {
+		height: 400px;
+	}
+
+	.card > div {
+		padding: 1rem;
+	}
+
+	#order-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	#order-container {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media only screen and (min-width: 750px) {
+	.card:nth-child(odd) img {
+		order: 2;
+	}
+}
+
+/* #endregion */
